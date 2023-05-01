@@ -45,8 +45,8 @@ function toWords(number: number | string, asOrdinal: boolean): string {
 }
 
 function generateWords(number: number, words?: string[]): string {
-    var remainder: number = 0;
-    var word: string = "";
+    var remainder: number;
+    var word: string;
 
     // We’re done
     if (number === 0) {
@@ -101,8 +101,8 @@ function generateWords(number: number, words?: string[]): string {
         ' quadrillion,';
     }
 
-    words.push(word);
-    return generateWords(remainder, words);
+    words.push(word!);
+    return generateWords(remainder!, words);
 }
 
 module.exports = toWords;
