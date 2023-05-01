@@ -44,7 +44,7 @@ function toWords(number: number | string, asOrdinal: boolean): string {
     return asOrdinal ? makeOrdinal(words) : words;
 }
 
-function generateWords(number: number, words?: string[] | undefined): string {
+function generateWords(number: number, words?: string[]): string {
     var remainder: number = 0;
     var word: string = "";
 
