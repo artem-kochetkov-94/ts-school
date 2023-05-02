@@ -1,5 +1,3 @@
-'use strict';
-
 var TEN: number = 10;
 var ONE_HUNDRED: number = 100;
 var ONE_THOUSAND: number = 1000;
@@ -26,7 +24,7 @@ var TENTHS_LESS_THAN_HUNDRED: string[] = [
  * @param {boolean} [asOrdinal] - Deprecated, use toWordsOrdinal() instead!
  * @returns {string}
  */
-function toWords(number: number | string, asOrdinal: boolean): string {
+export function toWords(number: number | string, asOrdinal: boolean): string {
     var words;
     var num = parseInt(String(number), 10);
 
@@ -35,12 +33,14 @@ function toWords(number: number | string, asOrdinal: boolean): string {
             'Not a finite number: ' + number + ' (' + typeof number + ')'
         );
     }
+    //@ts-ignore
     if (!isSafeNumber(num)) {
         throw new RangeError(
             'Input is not a safe number, it’s either too large or too small.'
         );
     }
     words = generateWords(num);
+    //@ts-ignore
     return asOrdinal ? makeOrdinal(words) : words;
 }
 
@@ -104,5 +104,3 @@ function generateWords(number: number, words?: string[]): string {
     words.push(word!);
     return generateWords(remainder!, words);
 }
-
-module.exports = toWords;
