@@ -19,3 +19,5 @@ class MyLogger extends Logger {
 
 const log = new MyLogger();
 log.logWithDate("message");
+
+export {};
