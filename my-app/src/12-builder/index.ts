@@ -29,6 +29,11 @@ class RequestBuilder<T> {
     return this;
   }
 
+  public setParams(params: AxiosRequestConfig["params"]): RequestBuilder<T> {
+    this.requestConfig.params = params;
+    return this;
+  }
+
   public setHeaders(headers: AxiosRequestConfig["headers"]): RequestBuilder<T> {
     this.requestConfig.headers = headers;
     return this;
