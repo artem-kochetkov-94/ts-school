@@ -4,7 +4,7 @@ import { HTTPRequestStatus, IUserResponse } from "../4-dummy-api/types";
 class RequestBuilder<T> {
   private requestConfig: AxiosRequestConfig<any> = {};
 
-  build(): RequestBuilder<T> {
+  public build(): RequestBuilder<T> {
     return this;
   }
 
