@@ -65,4 +65,4 @@ async function getUsers() {
 
 getUsers();
 
-export {};
+export { RequestBuilder };
