@@ -8,7 +8,7 @@ class RequestBuilder<T> {
     return this;
   }
 
-  public excec(): Promise<AxiosResponse<T, any>> {
+  public exec(): Promise<AxiosResponse<T, any>> {
     return axios<T, AxiosResponse<T, any>, any>(this.requestConfig);
   }
 
@@ -47,7 +47,7 @@ const getUsersRequest = new RequestBuilder<IUserResponse>()
 
 async function getUsers() {
   try {
-    const response = await getUsersRequest.excec();
+    const response = await getUsersRequest.exec();
 
     if (response.status !== HTTPRequestStatus.OK) {
       throw new Error("Failed request");
